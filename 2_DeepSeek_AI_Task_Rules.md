@@ -9,7 +9,7 @@ Participants are required to optimize SGLang-based DeepSeek inference performanc
 - Framework: [SGLang](https://github.com/sgl-project/sglang) - Structured Generation Language for Large Language Models
 - Model: [deepseek-ai/DeepSeek-R1](https://huggingface.co/deepseek-ai/DeepSeek-R1) (671B total parameters, 37B active parameters)
 - Data type precision for model weights and activations: BF16
-- Input dataset: `ShareGPT_V3_unfiltered_cleaned_split.json` - Conversational AI benchmark dataset
+- Input dataset: [ShareGPT_V3_unfiltered_cleaned_split.json](https://huggingface.co/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/blob/main/ShareGPT_V3_unfiltered_cleaned_split.json) - Conversational AI benchmark dataset
 
 - Performance metric:
   - Throughput (tokens/second) for offline inference
@@ -24,14 +24,14 @@ Participants are required to optimize SGLang-based DeepSeek inference performanc
 - The results will be executed on `2 GPU servers` with `8 GPUs per node` (16 H100 GPUs in total).
 - Results with execution time beyond `420 seconds` are considered INVALID.
 - Grading will be based on the `optimization method`, `performance improvement`, and `technical understanding`.
-- Participants may use any `tagged version` of SGLang or the `master code` from the main branch.
+- Participants may use any `tagged version` of [SGLang](https://github.com/sgl-project/sglang) or the `master code` from the main branch.
 - Source code modifications are allowed but participants must `design and provide` justification and validation to demonstrate output quality is preserved.
 
 ## 3. General Rules
 
 ### Cluster Usage
 
-- Computing platforms: The AI tasks must be optimized on NSCC Singapore ASPIRE-2A+ supercomputer. Teams may present optimization work done on other GPU clusters as extra information.
+- Computing platforms: The AI task must be optimized on NSCC Singapore ASPIRE-2A+ supercomputer. Teams may present optimization work done on other GPU clusters as extra information.
 
 ### Evaluation Criteria
 
