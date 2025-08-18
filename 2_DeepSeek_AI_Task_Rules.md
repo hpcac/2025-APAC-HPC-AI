@@ -14,7 +14,7 @@ Participants are required to optimize SGLang-based DeepSeek inference performanc
 - Performance metric:
   - Throughput (tokens/second) for offline inference
 - Number of nodes: 2 GPU nodes (16 H100 GPUs in total)
-- Benchmark prompts: 1000
+- Benchmark prompts: 2000
 - Load format: Dummy
 - Random seed: 2025
 - Time limit: 420 seconds, including model loading, warm-up, and benchmarking

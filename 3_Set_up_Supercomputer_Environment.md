@@ -20,18 +20,18 @@ ln -s scratch/home_cache .cache
 
 ## Setup Python environments
 
-To Install a MiniConda to create Python environments, the following commands
+To Install Miniforge to create Python environments, the following commands
 
-1. Download latest `miniconda.sh` to scratch directory
-2. Install miniconda to `${HOME}/miniconda`
-3. Initialized `.bashrc` for the installed miniconda
+1. Download latest `Miniforge3-Linux-x86_64.sh` to scratch directory
+2. Install miniforge to `${HOME}/miniforge`
+3. Initialized `.bashrc` for the installed miniforge
 4. Start a new bash shell with `conda` enabled
 
 ```bash
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/scratch/miniconda.sh
-time bash ${HOME}/scratch/miniconda.sh -b -p ${HOME}/miniconda
-# real	1m13.541s
-${HOME}/miniconda/bin/conda init
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O ${HOME}/scratch/Miniforge3-Linux-x86_64.sh
+time bash ${HOME}/scratch/Miniforge3-Linux-x86_64.sh -b -p ${HOME}/miniforge
+# real	0m24.953s
+${HOME}/scratch/miniforge/bin/conda init
 bash
 ```
 
@@ -73,17 +73,17 @@ ln -s /scratch/users/industry/ai-hpc/apacsc22 ${HOME}/scratch
 
 ## Setup Python environments
 
-To Install a MiniConda to create Python environments, the following commands
+To Install Miniforge to create Python environments, the following commands
 
-1. Download latest `miniconda.sh` to scratch directory
-2. Install miniconda to `${HOME}/miniconda`
-3. Initialized `.bashrc` for the installed miniconda
+1. Download latest `Miniforge3-Linux-x86_64.sh` to scratch directory
+2. Install miniforge to `${HOME}/miniforge`
+3. Initialized `.bashrc` for the installed miniforge
 4. Start a new bash shell with `conda` enabled
 
 ```bash
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ${HOME}/scratch/miniconda.sh
-time bash ${HOME}/scratch/miniconda.sh -b -p ${HOME}/miniconda
-# real	1m20.568s
-${HOME}/miniconda/bin/conda init
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O ${HOME}/scratch/Miniforge3-Linux-x86_64.sh
+time bash ${HOME}/scratch/Miniforge3-Linux-x86_64.sh -b -p ${HOME}/miniforge
+# real	0m24.953s
+${HOME}/scratch/miniforge/bin/conda init
 bash
 ```
