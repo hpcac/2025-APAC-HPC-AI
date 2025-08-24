@@ -17,6 +17,7 @@ mkdir -p ${HOME}/scratch/${USER}/qsub
 tee ${HOME}/scratch/${USER}/qsub/hostname.sh << 'EOF'
 #!/bin/bash
 #PBS -P pc08
+#PBS -q normalsr
 #PBS -l walltime=1
 #PBS -j oe
 #PBS -M 393958790@qq.com
@@ -39,7 +40,7 @@ EOF
 
 cd ${HOME}/scratch/${USER}/qsub
 qsub -l ncpus=1 hostname.sh
-qsub -l ncpus=$((48*2)),mem=$((48*1*2))gb hostname.sh
+qsub -l ncpus=$((104*2)),mem=$((104*1*2))gb hostname.sh
 ```
 
 The above command requests 2 vnodes (virtual nodes) with 127 CPU cores each, allowing you to observe the job allocation and execution behavior on the ASPIRE-2A system.
@@ -163,8 +164,9 @@ mkdir -p ${HOME}/scratch/${USER}/run
 tee ${HOME}/scratch/${USER}/run/nwchem.sh << 'EOF'
 #!/bin/bash
 #PBS -P pc08
-#PBS -l walltime=00:08:00
-#PBS -l ncpus=48,mem=96gb
+#PBS -q normalsr
+#PBS -l walltime=00:05:00
+#PBS -l ncpus=104,mem=208gb
 #PBS -j oe
 #PBS -M 393958790@qq.com
 #PBS -m abe
@@ -186,7 +188,7 @@ cd       ${HOME}/scratch/${USER}/nwchem/run/${PBS_JOBID}
 
 OUTPUT_FILE=${HOME}/run/job.${PBS_JOBNAME}.stdout
 
-time mpirun -np ${NCPUS:-48} \
+time mpirun -np ${NCPUS:-104} \
     nwchem \
     ${HOME}/scratch/${USER}/nwchem/input/w12_b3lyp_cc-pvtz_energy.nw \
     2>&1 | tee ${OUTPUT_FILE}
@@ -201,7 +203,7 @@ The following command submits the PBS job script to the queue:
 mkdir -p ${HOME}/run
 cd       ${HOME}/run
 
-qsub -N nwchem.w12.nodes1.ncpus48 ${HOME}/scratch/${USER}/run/nwchem.sh
+qsub -N nwchem.w12.nodes1.ncpus104 ${HOME}/scratch/${USER}/run/nwchem.sh
 ```
 
 ## Alternative submission with custom parameters
@@ -214,8 +216,8 @@ cd       ${HOME}/run
 
 # Define job parameters
 nodes=2 \
-ncpus=48 \
-walltime=00:08:00 \
+ncpus=104 \
+walltime=00:05:00 \
 bash -c \
 	'qsub -V \
     -l walltime=${walltime},ncpus=$((ncpus*1*nodes)),mem=$((ncpus*2*nodes))gb \
@@ -262,8 +264,8 @@ The performance results of NWChem are measured in “Total times”. The lower t
 
 ```bash
 [pz7344@gadi-login-02 run]$ grep "Total times" *
-job.nwchem.w12.nodes1.ncpus48.stdout: Total times  cpu:      350.9s     wall:      353.5s
-nwchem.w12.nodes1.ncpus48.o147376500: Total times  cpu:      350.9s     wall:      353.5s
+job.nwchem.w12.nodes1.ncpus104.stdout: Total times  cpu:      238.5s     wall:      241.8s
+nwchem.w12.nodes1.ncpus104.o147757705: Total times  cpu:      238.5s     wall:      241.8s
 ```
 
 ---

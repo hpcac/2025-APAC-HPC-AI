@@ -13,13 +13,15 @@ Participants are required to optimize the following workload for improved perfor
   - Wall-clock time to convergence: Overall execution time for complete calculations
   - Strong scaling efficiency: Performance scaling across different node counts
 - Node limit: Maximum 4 CPU nodes
-- Time limit: 180 seconds for ASPIRE2A, 420 seconds for Gadi
+- Time limit: 300 seconds
 - Recommendation: Use 2 nodes for optimization development and testing
 
 ## 2. Task Rules
 
 - The results will be executed on `up to 4 standard CPU servers`
-- Results with execution time beyond time limit are considered INVALID
+  - For NCI Gadi users: Use **normalsr** queue (Intel Xeon Platinum 8470Q Sapphire Rapids)
+  - For NSCC Singapore users: Use standard compute nodes (AMD EPYC 7713)
+- Results with execution time beyond `300 seconds` are considered INVALID
 - Grading will be based on the `optimization method`, `performance improvement`, and `technical understanding`
 - Participants may use any `tagged version` of [NWChem official releases](https://github.com/nwchemgit/nwchem/releases) or the `master code` from the main branch
 - Source code modifications are allowed but participants must demonstrate accuracy is preserved
