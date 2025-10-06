@@ -72,7 +72,6 @@ Participants are required to optimize SGLang-based DeepSeek inference performanc
 
 - Prepare presentation slides for your team's technical interview based on your AI inference optimization work.
 - Include a comparison with the baseline performance in your presentation slides.
-- Include scaling analysis showing performance across different GPU configurations.
 - Submit your `build scripts`, `run scripts`, and `output logs` that support your presentation (e.g., sglang.out, *.o{jobid}, etc.)
 - (Optional) Provide performance profiling data demonstrating bottleneck identification and optimization strategies.
 - If you modified the source code, design and submit output quality verification reports demonstrating that your changes maintain generation quality.
