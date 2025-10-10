@@ -180,8 +180,9 @@ basis "ao basis" spherical noprint
   * library cc-pvtz
 end
 
+# you can remove this entire block if you want
 scf
-  direct
+  direct   # you can change this
   singlet
   rhf
   thresh 1e-7
@@ -191,13 +192,14 @@ scf
 end
 
 task scf energy ignore
+# /end thing you can remove
 
 dft
-  direct
+  direct   # you can change this
   xc b3lyp
   grid fine
   iterations 100
-  vectors input w12_scf_cc-pvtz.movecs
+  vectors input w12_scf_cc-pvtz.movecs   # remove this if you remove the block above
   noprint "final vectors analysis" "final vector symmetries"
 end
 
